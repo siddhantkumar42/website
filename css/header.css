@@ -1,0 +1,14 @@
+#navigation {
+    word-spacing: 10px;
+    color: purple;
+}
+
+#navigation li {
+    list-style-type: none;
+    display: inline;
+}
+
+#navigation li:hover {
+    background-color: gray;
+    border-radius: 5px;
+}

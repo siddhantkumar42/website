@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    color: gray;
+}
+
+a {
+    color: blue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(255, 0, 0);
+}
+
+figcaption {
+    color: purple;
+}
+
+@media screen and (max-width: 600px) {
+    img {
+        height: auto;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 600px) {
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
