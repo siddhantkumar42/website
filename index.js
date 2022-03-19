@@ -10,5 +10,5 @@ var server = app.listen(8081, function() {
 });
 
 app.get('/test', (req, res) => {
-    res.sendFile(__dirname + '/pages/general/blogs.html');
+    res.sendFile(__dirname + '/public/pages/general/blogs.html');
 });
