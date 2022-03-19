@@ -35,7 +35,6 @@ figcaption {
         height: auto;
         width: 100%;
     }
-    
 }
 
 footer {
@@ -54,6 +53,18 @@ footer {
         font-size: 30px;
     }
     h2 {
-        font-size: 25px;
+        font-size: 20px;
     }
+}
+
+code {
+    background-color: gray;
+    color: black;
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: left;
+}
+
+code p {
+    font-size: 12px;
 }
