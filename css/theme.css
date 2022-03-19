@@ -3,18 +3,31 @@ body {
     text-align: center;
     padding: 10px;
     color: gray;
+    line-height: 1.4;
+}
+
+.nowrap {
+    white-space: nowrap;
 }
 
 a {
-    color: blue;
+    color: yellow;
+    font-style: italic;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: rgb(255, 0, 0);
+    color: red;
+    font-family: monospace;
+    font-style: italic;
+}
+
+p {
+    font-family: monospace;
 }
 
 figcaption {
     color: purple;
+    font-family: monospace;
 }
 
 @media screen and (max-width: 600px) {
@@ -23,6 +36,10 @@ figcaption {
         width: 100%;
     }
     
+}
+
+footer {
+    font-family: monospace;
 }
 
 @media screen and (min-width: 600px) {
