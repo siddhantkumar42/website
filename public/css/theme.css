@@ -47,4 +47,13 @@ footer {
         height: 100%;
         width: 100%;
     }
+    p {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 25px;
+    }
 }
