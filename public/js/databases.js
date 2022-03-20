@@ -1,7 +1,7 @@
 const {MongoClient} = require('mongodb')
 
 const url = "mongodb+srv://pritam:" + encodeURIComponent(`${process.env.MONGO_PASS}`) + "@cluster0.w2y5k.mongodb.net/main?retryWrites=true&w=majority";
-const client = new MongoClient(url, {useUnifiedTopology: true});
+const client = new MongoClient(url);
 
 async function addViews() {
     try {
