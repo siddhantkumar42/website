@@ -1,6 +1,4 @@
 const express = require("express");
-const { MongoClient } = require('mongodb');
-const databases = require("./public/js/databases.js")
 
 var app = express();
 
@@ -8,7 +6,6 @@ app.use(express.static(__dirname + '/public/'));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/index.html');
-    databases.addViews().catch(console.error);
 });
 
 app.get('/blogs', (req, res) => {
@@ -16,6 +13,10 @@ app.get('/blogs', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/blogs.html');
     databases.addViews();
 });
+
+app.get("*", (req, res) => {
+    res.status(404).sendFile(__dirname + "/public/pages/general/404_not_found.html");
+})
 
 var server = app.listen(8081, function() {
     var port = server.address().port;
