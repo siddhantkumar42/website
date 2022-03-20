@@ -1,0 +1,17 @@
+@media screen and (max-width: 600px) {
+    img {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    img {
+        width: 30%;
+    }
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
