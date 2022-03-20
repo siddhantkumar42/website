@@ -1,0 +1,23 @@
+#pritam {
+    animation-name: pritam;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pritam {
+    0% {
+        color: red;
+    }
+    25% {
+        color: blue;
+    }
+    50% {
+        color: green;
+    }
+    75% {
+        color: blue;
+    }
+    100% {
+        color: red;
+    }
+}
