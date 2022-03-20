@@ -1,6 +1,6 @@
 const {MongoClient} = require('mongodb')
 
-const url = "mongodb+srv://pritam:" + encodeURIComponent(`${process.env.MONGO_PASS}`) + "@cluster0.w2y5k.mongodb.net/main?retryWrites=true&w=majority";
+const url = "mongodb+srv://test:test@cluster0.w2y5k.mongodb.net/main?retryWrites=true&w=majority";
 const client = new MongoClient(url);
 
 async function addViews() {
