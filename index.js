@@ -11,7 +11,6 @@ app.get('/', (req, res) => {
 app.get('/blogs', (req, res) => {
     console.log(req.socket.remoteAddress);
     res.sendFile(__dirname + '/public/pages/general/blogs.html');
-    databases.addViews();
 });
 
 app.get("*", (req, res) => {
