@@ -13,6 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "body-parser": "^1.20.0",
+    "discord-webhook-node": "^1.1.8",
+    "express": "^4.17.3",
+    "express-formidable": "^1.2.0",
+    "express-validator": "^6.14.0"
   }
 }

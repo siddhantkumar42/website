@@ -1,0 +1,13 @@
+.mod_form {
+    border: 1px dashed red;
+    width: 400px;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .mod_form {
+    border: 1px dashed red;
+    width: 400px;
+    margin: auto;
+    }
+}
