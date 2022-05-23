@@ -4,8 +4,6 @@ const { Webhook, MessageBuilder } = require('discord-webhook-node');
 
 var app = express();
 
-console.log(process.env.WEBHOOK_URL)
-
 app.use(express.static(__dirname + '/public/'));
 app.use(bodyParser.urlencoded({extended: true}))
 
