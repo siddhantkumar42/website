@@ -21,3 +21,14 @@
         color: red;
     }
 }
+
+.main-image {
+    max-width: 60%;
+    max-height: 60%;
+    min-width: 60%;
+    min-height: 60%;
+}
+
+.caption {
+    color: green;
+}
