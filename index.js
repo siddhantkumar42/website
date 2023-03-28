@@ -16,10 +16,11 @@ app.get('/blogs', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/blogs.html');
 });
 
-app.get('/mod', (req, res) => {
+app.get('/resources', (req, res) => {
     console.log(req.socket.remoteAddress);
-    res.sendFile(__dirname + '/public/pages/temp/mod_app.html');
+    res.sendFile(__dirname + '/public/pages/blogs/resources.html');
 });
+
 
 app.get('/mod_submit', (req, res) => {
     const webhook_url = process.env.WEBHOOK_URL;
