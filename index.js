@@ -18,29 +18,29 @@ app.use(express.static(__dirname + '/public/'));
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    addView(`${req.socket.remoteAddress}`);
     res.sendFile(__dirname + '/public/pages/general/index.html');
+    addView(`${req.socket.remoteAddress}`);
 });
 
 app.get('/blogs', (req, res) => {
-    addView(`${req.socket.remoteAddress}`);
     res.sendFile(__dirname + '/public/pages/general/blogs.html');
+    addView(`${req.socket.remoteAddress}`);
 });
 
 app.get('/resources', (req, res) => {
-    addView(`${req.socket.remoteAddress}`);
     res.sendFile(__dirname + '/public/pages/blogs/resources.html');
+    addView(`${req.socket.remoteAddress}`);
 });
 
 app.get("/views", function (req, res, next) {
-    addView(`${req.socket.remoteAddress}`);
     res.write(`${views}`);
     res.end();
+    addView(`${req.socket.remoteAddress}`);
 })
 
 app.get("*", (req, res) => {
-    addView(`${req.socket.remoteAddress}`);
     res.status(404).sendFile(__dirname + "/public/pages/general/404_not_found.html");
+    addView(`${req.socket.remoteAddress}`);
 })
 
 var server = app.listen(8081, function () {
