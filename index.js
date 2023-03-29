@@ -18,8 +18,7 @@ app.use(express.static(__dirname + '/public/'));
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    addView(`${req.ip}`);
-    console.log(req.ip);
+    addView(`${req.socket.remoteAddress}`);
     res.sendFile(__dirname + '/public/pages/general/index.html');
 });
 
