@@ -15,6 +15,7 @@
   "dependencies": {
     "body-parser": "^1.20.0",
     "discord-webhook-node": "^1.1.8",
+    "dotenv": "^16.0.3",
     "express": "^4.17.3",
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.3",
