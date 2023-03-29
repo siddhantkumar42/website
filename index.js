@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
     addView(`${req.socket.remoteAddress}`);
-    console.log(req.socket.remoteAddress);
+    console.log(req.ip);
     res.sendFile(__dirname + '/public/pages/general/index.html');
 });
 
