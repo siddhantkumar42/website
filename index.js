@@ -1,5 +1,4 @@
 const express = require("express");
-const session = require('express-session')
 const bodyParser = require("body-parser");
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
 require('dotenv').config();
@@ -16,6 +15,7 @@ function addView(ip) {
 
 app.use(express.static(__dirname + '/public/'));
 app.use(bodyParser.urlencoded({ extended: true }))
+app.set('trust proxy')
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/index.html');
@@ -35,6 +35,12 @@ app.get('/resources', (req, res) => {
 app.get("/views", function (req, res, next) {
     res.write(`${views}`);
     res.end();
+    addView(`${req.socket.remoteAddress}`);
+})
+
+app.get("/test", function (req, res, next) {
+    console.log(req.header("x-forwarded-for"))
+    res.sendFile(__dirname + '/public/pages/general/index.html');
     addView(`${req.socket.remoteAddress}`);
 })
 
