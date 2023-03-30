@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
 const geoip = require('geoip-country');
+const dateTime = require('node-datetime');
 require('dotenv').config();
 
 const hook = new Webhook(process.env.webhook)
@@ -10,10 +11,12 @@ var app = express();
 var views = 0;
 
 function addView(ip) {
+    var dt = dateTime.create();
+    var formatted = dt.format('Y-m-d H:M:S');
     // I am not ip logging, just curious about what country the viewers might be from
     var geo = geoip.lookup(ip);
     if (geo) {
-        hook.send(`:flag_${geo.country.toLowerCase()}: (${geo.country})`);
+        hook.send(`${formatted} -> :flag_${geo.country.toLowerCase()}: (${geo.country})`);
     }
     views += 1;
 }
