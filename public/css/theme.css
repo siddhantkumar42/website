@@ -6,6 +6,11 @@ body {
     line-height: 1.4;
 }
 
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+
 .nowrap {
     white-space: nowrap;
 }
