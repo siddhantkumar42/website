@@ -15,7 +15,7 @@ function addView(ip) {
 
 app.use(express.static(__dirname + '/public/'));
 app.use(bodyParser.urlencoded({ extended: true }))
-app.set('trust proxy')
+app.set('trust proxy', true)
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/index.html');
