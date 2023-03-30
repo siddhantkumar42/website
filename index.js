@@ -19,37 +19,34 @@ app.set('trust proxy', true)
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/index.html');
-    addView(`${req.socket.remoteAddress}`);
+    addView(`req.ip: ${req.ip}`);
 });
 
 app.get('/blogs', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/blogs.html');
-    addView(`${req.socket.remoteAddress}`);
+    addView(`req.ip: ${req.ip}`);
 });
 
 app.get('/resources', (req, res) => {
     res.sendFile(__dirname + '/public/pages/blogs/resources.html');
-    addView(`${req.socket.remoteAddress}`);
+    addView(`req.ip: ${req.ip}`);
 });
 
 app.get("/views", function (req, res, next) {
     res.write(`${views}`);
     res.end();
-    addView(`${req.socket.remoteAddress}`);
+    addView(`req.ip: ${req.ip}`);
 })
 
 app.get("/test", function (req, res, next) {
     console.log(req.header("x-forwarded-for"))
     res.sendFile(__dirname + '/public/pages/general/index.html');
-    addView(`req.socket.remoteAddress: ${req.socket.remoteAddress}`);
     addView(`req.ip: ${req.ip}`);
-    addView(`req.connection.remoteAddress: ${req.connection.remoteAddress}`);
-
 })
 
 app.get("*", (req, res) => {
     res.status(404).sendFile(__dirname + "/public/pages/general/404_not_found.html");
-    addView(`${req.socket.remoteAddress}`);
+    addView(`req.ip: ${req.ip}`);
 })
 
 var server = app.listen(8081, function () {
