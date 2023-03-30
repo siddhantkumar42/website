@@ -13,7 +13,7 @@ function addView(ip) {
     // I am not ip logging, just curious about what country the viewers might be from
     var geo = geoip.lookup(ip);
     if (geo) {
-        hook.send(`${geo.country}`);
+        hook.send(`:flag_${geo.country.toLowerCase}: (${geo.country})`);
     }
     views += 1;
 }
