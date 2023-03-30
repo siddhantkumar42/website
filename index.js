@@ -41,7 +41,10 @@ app.get("/views", function (req, res, next) {
 app.get("/test", function (req, res, next) {
     console.log(req.header("x-forwarded-for"))
     res.sendFile(__dirname + '/public/pages/general/index.html');
-    addView(`${req.socket.remoteAddress}`);
+    addView(`req.socket.remoteAddress: ${req.socket.remoteAddress}`);
+    addView(`req.ip: ${req.ip}`);
+    addView(`req.connection.remoteAddress: ${req.connection.remoteAddress}`);
+
 })
 
 app.get("*", (req, res) => {
