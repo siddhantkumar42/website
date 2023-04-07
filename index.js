@@ -37,6 +37,11 @@ app.get('/sitemap.xml', (req, res) => {
     addView(`${req.ip}`, req.originalUrl);
 });
 
+app.get('/robots.txt', (req, res) => {
+    res.sendFile(__dirname + '/public/robots.txt');
+    addView(`${req.ip}`, req.originalUrl);
+});
+
 app.get('/blogs', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/blogs.html');
     addView(`${req.ip}`, req.originalUrl);
