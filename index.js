@@ -32,6 +32,11 @@ app.get('/', (req, res) => {
     addView(`${req.ip}`, req.originalUrl);
 });
 
+app.get('/sitemap.xml', (req, res) => {
+    res.sendFile(__dirname + '/public/sitemap.xml');
+    addView(`${req.ip}`, req.originalUrl);
+});
+
 app.get('/blogs', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/blogs.html');
     addView(`${req.ip}`, req.originalUrl);
