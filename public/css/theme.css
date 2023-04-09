@@ -4,6 +4,8 @@ body {
     padding: 10px;
     color: gray;
     line-height: 1.4;
+    font-family: monospace;
+    font-weight: 500;
 }
 
 ul {
@@ -25,7 +27,7 @@ a:hover {
 }
 
 a:visited {
-    color: blueviolet;
+    color: skyblue;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,12 +36,8 @@ h1, h2, h3, h4, h5, h6 {
     font-style: italic;
 }
 
-p {
-    font-family: monospace;
-}
-
 figcaption {
-    color: purple;
+    color: blue;
     font-family: monospace;
 }
 

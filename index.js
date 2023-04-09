@@ -64,11 +64,6 @@ app.get("/views", function (req, res, next) {
     addView(`${req.ip}`, req.originalUrl);
 })
 
-app.get("/test", function (req, res, next) {
-    console.log(req.header("x-forwarded-for"))
-    res.sendFile(__dirname + '/public/pages/general/index.html');
-    addView(`${req.ip}`, req.originalUrl);
-})
 
 app.get("*", (req, res) => {
     res.status(404).sendFile(__dirname + "/public/pages/general/404_not_found.html");
