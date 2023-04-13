@@ -41,3 +41,26 @@
 .caption {
     color: greenyellow;
 }
+
+
+.quote {
+    animation-name: quote;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes quote {
+    0% {
+        text-shadow: 0 0 5px orange;
+    }
+    50% {
+        text-shadow: 0 0 1px orange;
+    }
+    100% {
+        text-shadow: 0 0 5px orange;
+    }
+}
+
+.quote:hover {
+    color: yellow;
+}
