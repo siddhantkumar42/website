@@ -7,18 +7,24 @@ require('dotenv').config();
 
 const hook = new Webhook(process.env.webhook)
 
+const embed = new MessageBuilder()
+.setTitle('Deployed..')
+.setDescription(`Time: ${new Date().toLocaleString('en-US', {timeZone: 'Asia/Kolkata'})}`)
+.setURL('https://pritam42069.me')
+
+hook.send(embed)
+
 var app = express();
 var views = 0;
 
 function addView(ip, page) {
-    var dt = dateTime.create();
-    var formatted = dt.format('Y-m-d H:M:S');
+    var dt = new Date().toLocaleString('en-US', {timeZone: 'Asia/Kolkata'})
     // I am not ip logging, just curious about what country the viewers might be from
     var geo = geoip.lookup(ip);
     if (geo) {
-        hook.send(`${formatted} -> :flag_${geo.country.toLowerCase()}: (${geo.country}) -> ${page}`);
+        hook.send(`${dt} -> :flag_${geo.country.toLowerCase()}: (${geo.country}) -> ${page}`);
     } else {
-        hook.send(`${page}`)
+        hook.send(`${page}`);
     }
     views += 1;
 }
