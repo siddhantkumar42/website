@@ -22,7 +22,7 @@ function addView(ip, page) {
     // I am not ip logging, just curious about what country the viewers might be from
     var geo = geoip.lookup(ip);
     if (geo) {
-        hook.send(`${dt} -> :flag_${geo.country.toLowerCase()}: (${geo.country}) -> ${page}`);
+        hook.send(`${dt} -> :flag_${geo.country.toLowerCase()}: (${geo.country}) -> ${page} -> [${ip}]`);
     } else {
         hook.send(`${page}`);
     }
