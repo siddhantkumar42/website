@@ -40,40 +40,40 @@ app.get('/', (req, res) => {
 
 app.get('/sitemap.xml', (req, res) => {
     res.sendFile(__dirname + '/public/sitemap.xml');
-    addView(`${req.ip}`, req.originalUrl);
+    addView(`${req.ip}`, req.headers['user-agent'], req.originalUrl);
 });
 
 app.get('/robots.txt', (req, res) => {
     res.sendFile(__dirname + '/public/robots.txt');
-    addView(`${req.ip}`, req.originalUrl);
+    addView(`${req.ip}`, req.headers['user-agent'], req.originalUrl);
 });
 
 app.get('/blogs', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/blogs.html');
-    addView(`${req.ip}`, req.originalUrl);
+    addView(`${req.ip}`, req.headers['user-agent'], req.originalUrl);
 });
 
 app.get('/resources', (req, res) => {
     res.sendFile(__dirname + '/public/pages/blogs/resources.html');
-    addView(`${req.ip}`, req.originalUrl);
+    addView(`${req.ip}`, req.headers['user-agent'], req.originalUrl);
 });
 
 app.get('/music', (req, res) => {
     res.sendFile(__dirname + '/public/pages/blogs/music.html');
-    addView(`${req.ip}`, req.originalUrl);
+    addView(`${req.ip}`, req.headers['user-agent'], req.originalUrl);
 });
 
 
 app.get("/views", function (req, res, next) {
     res.write(`${views}`);
     res.end();
-    addView(`${req.ip}`, req.originalUrl);
+    addView(`${req.ip}`, req.headers['user-agent'], req.originalUrl);
 })
 
 
 app.get("*", (req, res) => {
     res.status(404).sendFile(__dirname + "/public/pages/general/404_not_found.html");
-    addView(`${req.ip}`, req.originalUrl);
+    addView(`${req.ip}`, req.headers['user-agent'], req.originalUrl);
 })
 
 var server = app.listen(8081, function () {
