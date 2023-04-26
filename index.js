@@ -17,12 +17,12 @@ hook.send(embed)
 var app = express();
 var views = 0;
 
-function addView(ip, page) {
+function addView(ip, user_agent, page) {
     var dt = new Date().toLocaleString('en-US', {timeZone: 'Asia/Kolkata'})
     // I am not ip logging, just curious about what country the viewers might be from
     var geo = geoip.lookup(ip);
     if (geo) {
-        hook.send(`${dt} -> :flag_${geo.country.toLowerCase()}: (${geo.country}) -> ${page} -> [${ip}]`);
+        hook.send(`${dt} -> :flag_${geo.country.toLowerCase()}: (${geo.country}) -> ${page} -> [${ip}] <-> [${user_agent}]`);
     } else {
         hook.send(`${page}`);
     }
@@ -35,7 +35,7 @@ app.set('trust proxy', true)
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/pages/general/index.html');
-    addView(`${req.ip}`, req.originalUrl);
+    addView(`${req.ip}`, req.headers['user-agent'], req.originalUrl);
 });
 
 app.get('/sitemap.xml', (req, res) => {
