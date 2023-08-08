@@ -13,10 +13,11 @@ const quotes = [
 async function demo() {
     while (true) {
         for (var i = 0; i < quotes.length; i++) {
-            console.log(document.getElementsByClassName("quote")[0]);
+            document.getElementsByClassName("quote")[0] = "The moment a creature turns its face towards Me (says the Lord) the sin committed by it through millions of births are dissolved then and there."
             await sleep(2*1000)
         }
     }
     console.log('Done');
 }
 
+demo()

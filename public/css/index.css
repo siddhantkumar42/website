@@ -4,6 +4,13 @@
     animation-iteration-count: infinite;
 }
 
+#swastika {
+    animation-name: swastika;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    font-style: normal;
+}
+
 @keyframes pritam {
     0% {
         color: red;
@@ -20,6 +27,13 @@
     100% {
         color: red;
     }
+}
+
+@keyframes swastika {
+    0% {
+        transform: rotate(360deg);
+    }
+
 }
 
 .main-image {
